@@ -1,0 +1,24 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website built with Node.js and TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rmdir /s /q dist",
+    "build": "npm run clean && tsc && npm run copy-assets",
+    "dev": "tsc --watch & npm run serve",
+    "serve": "npx http-server dist -p 3000 -o",
+    "copy-assets": "npx copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.png src/**/*.jpg src/**/*.jpeg src/**/*.svg src/data/**/* dist/",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": ["portfolio", "typescript", "nodejs"],
+  "author": "William",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.1",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}
